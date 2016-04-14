@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngResource'])
+angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -41,27 +41,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-  .state('app.settings', {
-      url: '/settings',
+  .state('app.browse', {
+      url: '/browse',
       views: {
         'menuContent': {
-          templateUrl: 'templates/settings.html'
-        }
-      }
-    })
-	  .state('app.profilePage', {
-      url: '/profilePage',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/profilePage.html'
-        }
-      }
-    })
-	  .state('app.createEvent', {
-      url: '/createEvent',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/createEvent.html'
+          templateUrl: 'templates/browse.html'
         }
       }
     })
@@ -69,8 +53,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: '/playlists',
       views: {
         'menuContent': {
-          templateUrl: 'templates/discover.html',
-          controller: 'EventCtrl'
+          templateUrl: 'templates/playlists.html',
+          controller: 'PlaylistsCtrl'
         }
       }
     })
