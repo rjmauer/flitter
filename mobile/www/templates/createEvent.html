@@ -1,13 +1,20 @@
 <ion-view view-title="Event Creation">
   <ion-content class="padding">
-   <form ng-submit = "submitForm()">
-      
+   <form ng-submit = "submitForm()" class="createEventForm">
+      <div class="list"> 
+      	
+      	<label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Title</span> <input type="text" placeholder="Title" ng-model="party.title"> </label> 
+
+      	<label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Date</span> <input type="text" placeholder="Date" ng-model="party.date"> </label> 
+
+        <label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Time</span> <input type="text" placeholder="Time" ng-model="party.time"> </label>
+
+        <label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Location</span> <input type="text" placeholder="Location"> </label>
+
+        <label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Description</span> <input type="text" placeholder="Description" ng-model="party.description"> </label>
+      </div> 
    
-        <input type="text" id = "title" placeholder="Title" ng-model="party.title">
-        <input type="text" placeholder="date"id="date" ng-model="party.date">
-		<input type="text" placeholder = "time"id = "time"  ng-model="party.time">
-        <input type="text"id="description" placeholder="Description" ng-model="party.description">
-		<input type = "submit" name = "Submit">
+     <button class="button button-block button-calm"  <input type = "submit" name = "Submit"> Submit </button>
     </form>
   </ion-content>
 </ion-view>

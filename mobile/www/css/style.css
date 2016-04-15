@@ -39,3 +39,9 @@ padding: 8px;
 padding-top: 16px;
 padding-left: 16px;
 }
+
+.createEventFormField {
+border-right: 5px;
+border-left: 5px;
+border-top:none;
+}
