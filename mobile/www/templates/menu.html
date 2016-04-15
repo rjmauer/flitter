@@ -22,10 +22,10 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-      <ion-item menu-close ng-click="login()">
+      <ion-item menu-close href="#/app/discover">
           Discover
         </ion-item>
-        <ion-item menu-close ng-click="login()">
+        <ion-item menu-close href="#/app/yourPlans">
           Your Plans
         </ion-item>
         <ion-item menu-close href="#/app/createEvent">
@@ -34,11 +34,11 @@
         <ion-item menu-close href="#/app/profilePage">
           Profile
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
+        <ion-item menu-close href="#/app/settings">
           Settings
         </ion-item>
-        <ion-item menu-close href="#/app/discover">
-          Logout
+        <ion-item menu-close ng-click="login()">
+          Login
         </ion-item>
       </ion-list>
     </ion-content>

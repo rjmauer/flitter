@@ -42,11 +42,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.settings', {
+      url: '/settings',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/settings.html'
         }
       }
     })
@@ -66,8 +66,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
+<<<<<<< HEAD
     .state('app.discover', {
       url: '/discover',
+=======
+    .state('app.yourPlans', {
+      url: '/yourPlans',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/yourPlans.html'
+        }
+      }
+    })
+    .state('app.playlists', {
+      url: '/playlists',
+>>>>>>> 67bc2f7a13348acc31f48d1304b2e61cc2784a29
       views: {
         'menuContent': {
           templateUrl: 'templates/discover.html',
