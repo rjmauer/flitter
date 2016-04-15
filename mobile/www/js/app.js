@@ -50,6 +50,15 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
         }
       }
     })
+	
+  .state('app.contactUs', {
+      url: '/contactUs',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/contactUs.html'
+        }
+      }
+    })
 	  .state('app.profilePage', {
       url: '/profilePage',
       views: {
