@@ -21,8 +21,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   });
 })
-
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  $httpProvider.defaults.withCredentials = true;
   $stateProvider
 
     .state('app', {
@@ -32,11 +32,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.login', {
+    url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/login.html'
+		//controller: 'LoginCtrl'
       }
     }
   })
@@ -65,8 +66,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.discover', {
+      url: '/discover',
       views: {
         'menuContent': {
           templateUrl: 'templates/discover.html',
@@ -74,7 +75,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-
+	.state('app.discover2', {
+      url: '/discover2',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/discover2.html',
+          controller: 'EventCtrl'
+        }
+      }
+    })
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
@@ -84,6 +93,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   });
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/discover');
 });
