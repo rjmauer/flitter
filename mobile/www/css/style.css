@@ -40,8 +40,16 @@ padding-top: 16px;
 padding-left: 16px;
 }
 
+.createEventForm {
+  margin:16px;
+}
+
 .createEventFormField {
 border-right: 5px;
 border-left: 5px;
 border-top:none;
+}
+
+.createEventSubmit {
+  margin-top:40px;
 }
