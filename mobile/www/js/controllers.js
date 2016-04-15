@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
 	$scope.login = function(){
 		$location.path('/app/discover');
 		location.reload();
-	}
+}
 /*$scope.data = {};
 
 $scope.login = function() {
@@ -83,6 +83,14 @@ $scope.login = function() {
     };*/
 })
 .controller('EventCtrl', function($scope,$location, Events) {
+	$scope.newEvent = function(){
+		$location.path('/app/discover2');
+		location.reload();
+	}
+	$scope.newEvent2 = function(){
+		$location.path('/app/discover');
+		location.reload();
+	}
   Events.query().$promise.then(function(response){
     $scope.eventslol = response;
   });

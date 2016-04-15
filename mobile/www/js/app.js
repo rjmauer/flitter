@@ -71,27 +71,28 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
       url: '/discover',
       views: {
         'menuContent': {
-          templateUrl: 'templates/discover.html'
+          templateUrl: 'templates/discover.html',
+		  controller:'EventCtrl'
         }
       }
     })
-    .state('app.yourPlans', {
-      url: '/yourPlans',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/yourPlans.html'
-        }
-      }
-    })
-	.state('app.discover2', {
-      url: '/discover2',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/discover2.html',
-          controller: 'EventCtrl'
-        }
-      }
-    })
+.state('app.yourPlans', {
+  url: '/yourPlans',
+  views: {
+	'menuContent': {
+	  templateUrl: 'templates/yourPlans.html'
+	}
+  }
+})
+.state('app.discover2', {
+  url: '/discover2',
+  views: {
+	'menuContent': {
+	  templateUrl: 'templates/discover2.html',
+	  controller: 'EventCtrl'
+	}
+  }
+})
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/login');
