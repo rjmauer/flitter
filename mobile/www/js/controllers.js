@@ -61,6 +61,7 @@ $scope.login = function() {
   );
 }
 })
+
 .controller('EventCtrl', function($scope,$location, Events) {
   Events.query().$promise.then(function(response){
     $scope.eventslol = response;

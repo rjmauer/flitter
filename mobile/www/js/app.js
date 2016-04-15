@@ -66,25 +66,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-<<<<<<< HEAD
-    .state('app.discover', {
+ .state('app.discover', {
       url: '/discover',
-=======
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/discover.html'
+        }
+      }
+    })
     .state('app.yourPlans', {
       url: '/yourPlans',
       views: {
         'menuContent': {
           templateUrl: 'templates/yourPlans.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
->>>>>>> 67bc2f7a13348acc31f48d1304b2e61cc2784a29
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/discover.html',
-          controller: 'EventCtrl'
         }
       }
     })
