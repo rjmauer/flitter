@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngResource'])
+angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 'ngResource'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -36,8 +36,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'templates/login.html'
-		//controller: 'LoginCtrl'
+        templateUrl: 'templates/login.html',
+		controller: 'LoginCtrl'
       }
     }
   })
@@ -63,6 +63,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       views: {
         'menuContent': {
           templateUrl: 'templates/createEvent.html'
+		  //controller: 'CreateCtrl'
         }
       }
     })
@@ -91,16 +92,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/discover');
+  $urlRouterProvider.otherwise('/app/login');
+
 });

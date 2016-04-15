@@ -40,8 +40,12 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
-.controller('LoginCtrl', function($scope, $location, UserSession, $ionicPopup, $rootScope) {
-$scope.data = {};
+.controller('LoginCtrl', function($scope, $location/*, UserSession, $ionicPopup, $rootScope*/) {
+	$scope.login = function(){
+		$location.path('/app/discover');
+		location.reload();
+	}
+/*$scope.data = {};
 
 $scope.login = function() {
   var user_session = new UserSession({ user: $scope.data });
@@ -59,9 +63,25 @@ $scope.login = function() {
       });
     }
   );
-}
+}*/
 })
+.controller('CreateCtrl', function($scope/*, $http*/) {
+ /* // create a blank object to handle form data.
+	$scope.party = {};
+  // calling our submit function.
+    $scope.submitForm = function() {
+			console.log($scope.party.title);
+		$scope.events = {
+			"event": {"title": $scope.party.title, "description": $scope.party.description}
+		};
 
+		$http({
+		  method  : 'POST',
+		  url     : 'http://localhost:3000/events',
+		  data    : $scope.events //forms user object
+		 })
+    };*/
+})
 .controller('EventCtrl', function($scope,$location, Events) {
   Events.query().$promise.then(function(response){
     $scope.eventslol = response;
@@ -70,16 +90,3 @@ $scope.go = function ( path ) {
   $location.path( path );
 };
 })
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
