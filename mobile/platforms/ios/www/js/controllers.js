@@ -40,17 +40,61 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
+.controller('LoginCtrl', function($scope, $location/*, UserSession, $ionicPopup, $rootScope*/) {
+	$scope.login = function(){
+		$location.path('/app/discover');
+		location.reload();
+}
+/*$scope.data = {};
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+$scope.login = function() {
+  var user_session = new UserSession({ user: $scope.data });
+  user_session.$save(
+    function(data){
+      window.localStorage['userId'] = data.id;
+      window.localStorage['userName'] = data.name;
+      $location.path('/tab/dash');
+    },
+    function(err){
+      var error = err["data"]["error"] || err.data.join('. ')
+      var confirmPopup = $ionicPopup.alert({
+        title: 'An error occured',
+        template: error
+      });
+    }
+  );
+}*/
 })
+.controller('CreateCtrl', function($scope/*, $http*/) {
+ /* // create a blank object to handle form data.
+	$scope.party = {};
+  // calling our submit function.
+    $scope.submitForm = function() {
+			console.log($scope.party.title);
+		$scope.events = {
+			"event": {"title": $scope.party.title, "description": $scope.party.description}
+		};
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+		$http({
+		  method  : 'POST',
+		  url     : 'http://localhost:3000/events',
+		  data    : $scope.events //forms user object
+		 })
+    };*/
+})
+.controller('EventCtrl', function($scope,$location, Events) {
+	$scope.newEvent = function(){
+		$location.path('/app/discover2');
+		location.reload();
+	}
+	$scope.newEvent2 = function(){
+		$location.path('/app/discover');
+		location.reload();
+	}
+  Events.query().$promise.then(function(response){
+    $scope.eventslol = response;
+  });
+$scope.go = function ( path ) {
+  $location.path( path );
+};
+})

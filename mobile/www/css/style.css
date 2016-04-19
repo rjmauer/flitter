@@ -53,3 +53,18 @@ border-top:none;
 .createEventSubmit {
   margin-top:40px;
 }
+
+.eventActionButton {
+float:right;
+right:32px;
+bottom:-32px;
+overflow:visible;
+background: $assertive;
+  position: fixed;
+  z-index: 9999;
+}
+
+.eventCard {
+overflow:visible;
+position:relative;
+}

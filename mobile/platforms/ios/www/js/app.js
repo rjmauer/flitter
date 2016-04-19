@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 'ngResource'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -21,8 +21,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
 })
-
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  $httpProvider.defaults.withCredentials = true;
   $stateProvider
 
     .state('app', {
@@ -32,42 +32,78 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.login', {
+    url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/login.html',
+		controller: 'LoginCtrl'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.settings', {
+      url: '/settings',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/settings.html'
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+	
+  .state('app.contactUs', {
+      url: '/contactUs',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'templates/contactUs.html'
         }
       }
     })
+	  .state('app.profilePage', {
+      url: '/profilePage',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profilePage.html'
+        }
+      }
+    })
+	  .state('app.createEvent', {
+      url: '/createEvent',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/createEvent.html'
+		  //controller: 'CreateCtrl'
+        }
+      }
+    })
+ .state('app.discover', {
+      url: '/discover',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/discover.html',
+		  controller:'EventCtrl'
+        }
+      }
+    })
+.state('app.yourPlans', {
+  url: '/yourPlans',
+  views: {
+	'menuContent': {
+	  templateUrl: 'templates/yourPlans.html'
+	}
+  }
+})
+.state('app.discover2', {
+  url: '/discover2',
+  views: {
+	'menuContent': {
+	  templateUrl: 'templates/discover2.html',
+	  controller: 'EventCtrl'
+	}
+  }
+})
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/login');
+
 });

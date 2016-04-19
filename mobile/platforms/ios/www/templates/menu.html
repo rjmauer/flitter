@@ -8,27 +8,67 @@
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear ion-android-notifications" menu-toggle="right">
+        </button>
+    </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Menu</h1>
+      <h1 class="title">Flitter</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
+      <ion-item menu-close href="#/app/discover">
+          Discover
+        </ion-item>
+        <ion-item menu-close href="#/app/yourPlans">
           Your Plans
         </ion-item>
-        <ion-item menu-close href="#/app/search">
+        <ion-item menu-close href="#/app/createEvent">
+          Create New
+        </ion-item>
+        <ion-item menu-close href="#/app/profilePage">
           Profile
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
+        <ion-item menu-close href="#/app/settings">
           Settings
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Logout
+		<ion-item menu-close href="#/app/contactUs">
+          Contact Us
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+  <ion-side-menu side="right">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Notifications</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close ng-click="">
+          <h3>Upcoming Plan</h3>
+            <h4>Pickup Basketball</h4>
+        <p>Friday, April 8 @ 3:30 PM</p>
+        </ion-item>
+        <ion-item menu-close href="">
+          <h3>New Comment by Johnny B. Good</h3>
+            <h4>Reimert with the Squad</h4>
+        <p>Saturday, April 9 @ 9:30 PM</p>
+        </ion-item>
+        <ion-item menu-close href="">
+          <h3>Plan Accepted by Alissa Jupiter</h3>
+            <h4>Design Class with AMC!</h4>
+        <p>Monday, April 11 @ 6:00 PM</p>
+        </ion-item>
+        <ion-item menu-close href="">
+          <h3>Chuck Bryant Passed on your Plan</h3>
+            <h4>Pregame Throw-Down before Reimert</h4>
+        <p>Saturday, April 9 @ 6:00 PM</p>
         </ion-item>
       </ion-list>
     </ion-content>
