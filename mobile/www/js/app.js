@@ -67,6 +67,15 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
         }
       }
     })
+	.state('app.bbqEventPage', {
+      url: '/bbqEventPage',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/bbqEventPage.html',
+		  controller: 'EventCtrl'
+        }
+      }
+    })
 	  .state('app.createEvent', {
       url: '/createEvent',
       views: {
