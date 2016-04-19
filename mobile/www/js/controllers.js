@@ -81,6 +81,21 @@ $scope.login = function() {
 		  data    : $scope.events //forms user object
 		 })
     };*/
+	var x = document.getElementById("loc");
+	
+	$scope.getLocation = function() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		} else {
+			x.innerHTML = "Geolocation is not supported by this browser.";
+		}
+		
+	}
+	showPosition = function(position) {
+		x.innerHTML = "(" + position.coords.latitude + 
+    "," + position.coords.longitude+")";  
+	}
+	
 })
 .controller('EventCtrl', function($scope,$location, Events) {
 	$scope.newEvent = function(){

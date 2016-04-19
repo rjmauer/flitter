@@ -80,8 +80,8 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
       url: '/createEvent',
       views: {
         'menuContent': {
-          templateUrl: 'templates/createEvent.html'
-		  //controller: 'CreateCtrl'
+          templateUrl: 'templates/createEvent.html',
+		  controller: 'CreateCtrl'
         }
       }
     })

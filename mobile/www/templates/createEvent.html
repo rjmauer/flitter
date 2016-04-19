@@ -5,11 +5,12 @@
       	
       	<label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Title</span> <input type="text" placeholder="Title" ng-model="party.title"> </label> 
 
-      	<label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Date</span> <input type="text" placeholder="Date" ng-model="party.date"> </label> 
+      	<label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Date</span> <input type="date" placeholder="Date" ng-model="party.date"> </label> 
 
-        <label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Time</span> <input type="text" placeholder="Time" ng-model="party.time"> </label>
+        <label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Time</span> <input type="time" placeholder="Time" ng-model="party.time"> </label>
 
-        <label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Location</span> <input type="text" placeholder="Location"></label>
+        <label class="createEventFormField item item-input item-floating-label"id = "loc"> <span class="input-label">Location</span> <input type="text" placeholder="Location" ></input></label>
+		<button ng-click="getLocation()">My Location</button>
 
         <label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Description</span> <input type="text" placeholder="Description" ng-model="party.description"> </label>
       </div> 
