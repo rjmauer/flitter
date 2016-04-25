@@ -13,10 +13,12 @@ font-family: 'Slabo 13px', serif;
  
  .title.title-center.header-item {
         background-color:#0B51D4!important; // for bg color
-        margin:0px!important;
-        margin-left:0px!important;
+        margin:auto;
+        /* 0px!important; */
+        /* margin-left:0px!important; */
+        
         color: #ffffff!important;
-        width: 100%;
+        width: auto;
         font-family: 'Slabo 13px', serif;
     }
     
