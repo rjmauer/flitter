@@ -98,18 +98,23 @@ $scope.login = function() {
 	
 })
 .controller('EventCtrl', function($scope,$location, Events) {
-	$scope.newEvent = function(){
-		$location.path('/app/discover2');
-		location.reload();
-	}
-	$scope.newEvent2 = function(){
-		$location.path('/app/discover');
-		location.reload();
-	}
-  Events.query().$promise.then(function(response){
-    $scope.eventslol = response;
-  });
-$scope.go = function ( path ) {
-  $location.path( path );
-};
+	var count = 0;
+
+	 Events.query().$promise.then(function(response){
+		 
+		$scope.eventslol = [response[Math.floor(Math.random() * response.length-1)]];
+	  });
+	 $scope.newEvent = function(){
+		 count++;
+		 
+		 Events.query().$promise.then(function(response){
+			if(count>=response.length){
+				count = 0;
+			}
+			$scope.eventslol = [response[count]];
+		});
+	 }
+	$scope.go  = function ( path ) {
+	  $location.path( path );
+	};
 })

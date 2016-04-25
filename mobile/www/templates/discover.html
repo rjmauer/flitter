@@ -1,11 +1,10 @@
 <ion-view view-title="Discover" class="discover-page">
   <ion-content scroll="false">
-
-    <div class="list card current-song discoverCard discoverCardBackground">
+    <div class="list card current-song discoverCard discoverCardBackground" ng-repeat="Events in eventslol">
 
       <div class="item">
-        <h2>Books, Brews and BBQ spring fundraiser</h2>
-        <p>	Saturday, May 21 @ 6 PM</p>
+        <h2>{{Events.title}}</h2>
+        <p>	{{Events.date}} {{Events.time}}</p>
       </div>
 
 	<a href = "/#/app/bbqEventPage"><img  ng-src="/img/bbq.jpg" height = "200px" width = "300px"></a>
