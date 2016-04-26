@@ -65,14 +65,14 @@ $scope.login = function() {
   );
 }*/
 })
-.controller('CreateCtrl', function($scope/*, $http*/) {
- /* // create a blank object to handle form data.
+.controller('CreateCtrl', function($scope, $http) {
+  // create a blank object to handle form data.
 	$scope.party = {};
   // calling our submit function.
     $scope.submitForm = function() {
-			console.log($scope.party.title);
+			console.log($scope.party.time);
 		$scope.events = {
-			"event": {"title": $scope.party.title, "description": $scope.party.description}
+			"event": {"title": $scope.party.title, "date": $scope.party.date, "time":$scope.party.time, "description": $scope.party.description}
 		};
 
 		$http({
@@ -80,7 +80,7 @@ $scope.login = function() {
 		  url     : 'http://localhost:3000/events',
 		  data    : $scope.events //forms user object
 		 })
-    };*/
+    };
 	var x = document.getElementById("loc");
 	
 	$scope.getLocation = function() {
