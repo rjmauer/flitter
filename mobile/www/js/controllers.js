@@ -65,9 +65,12 @@ $scope.login = function() {
   );
 }*/
 })
-.controller('CreateCtrl', function($scope, $http) {
+.controller('CreateCtrl', function($scope, $http, $ionicPopup) {
   // create a blank object to handle form data.
 	$scope.party = {};
+	 var y = document.getElementById("eventForm");
+	 var z = document.getElementById("loc");
+	 
   // calling our submit function.
     $scope.submitForm = function() {
 			console.log($scope.party.time);
@@ -78,12 +81,18 @@ $scope.login = function() {
 		$http({
 		  method  : 'POST',
 		  url     : 'http://localhost:3000/events',
-		  data    : $scope.events //forms user object
+		  data    : $scope.events 
 		 })
+		  var confirmPopup = $ionicPopup.alert({
+        title: 'Your event has been created.',
+      });
+	y.reset();
+	z.innerHTML="Location";
     };
-	var x = document.getElementById("loc");
 	
+	var x = document.getElementById("loc");
 	$scope.getLocation = function() {
+		
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(showPosition);
 		} else {
