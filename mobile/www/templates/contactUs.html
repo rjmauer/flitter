@@ -2,24 +2,28 @@
   <ion-content>
     <h1>Contact Us</h1>
 	<div>
-		<h5>What part of Flitter is broken?</h5>
-		<div class="checkBox">
-			<input style="display:inline" type="checkbox" name="animal" value="Cat" class="helpButton"/>The other thing <br />
+		<h5 style="margin:10px">What part of Flitter is broken?</h5>
+		<div style="float:left">
+			<div class="checkBox">
+				<input style="display:inline" type="checkbox" name="animal" value="Cat" class="helpButton"/>Event Creation<br />
+			</div>
+			
+			<div class="checkBox">
+				<input style="display:inline" type="checkbox" name="animal" value="Cat" class="helpButton"/>Event Finding<br />
+			</div>
+			
+			<div class="checkBox">
+				<input style="display:inline" type="checkbox" name="animal" value="Cat" class="helpButton"/>My Plans Page<br />
+			</div>
+			
+			<div class="checkBox">
+				<input style="display:inline" type="checkbox" name="animal" value="Cat" class="helpButton"/>My Friends<br />
+			</div>
 		</div>
 		
-		<div class="checkBox">
-			<input style="display:inline" type="checkbox" name="animal" value="Cat" class="helpButton"/>The thing <br />
+		<div>
+			<label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Title</span> <input type="text" placeholder="Select one or more and type here" ng-model="party.title"> </label>
 		</div>
-		
-		<div class="checkBox">
-			<input style="display:inline" type="checkbox" name="animal" value="Cat" class="helpButton"/>The third thing <br />
-		</div>
-		
-		<div class="checkBox">
-			<input style="display:inline" type="checkbox" name="animal" value="Cat" class="helpButton"/>Anotha One<br />
-		</div>
-		
-		<label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Title</span> <input type="text" placeholder="Select one or more and type here" ng-model="party.title"> </label>
 		
 		<div>
 			<button>Send</button>
