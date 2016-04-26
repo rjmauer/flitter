@@ -155,7 +155,11 @@ position:relative;
 	background-color:blue;
 }
 
-.helpButton{
+.checkBox{
 	float:left;
+	margin: 20px;
+}
+.socialButton{
+	display: inline-block;
 	margin: 20px;
 }
