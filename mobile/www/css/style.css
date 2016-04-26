@@ -61,10 +61,17 @@ border-radius: 10px!important;
 font-family: 'Slabo 13px', serif;
 font-size: 20px;
 margin-top:16px;
-margin-bottom:8px;
+margin-left:16px;
+}
+
+.profPageMore{
+font-size: 24px!important;
+left:16px;
+bottom: 12px;
 }
 
 .profilePagePoints{
+font-size: 16px!important;
 }
 
 .profilePageControls{
