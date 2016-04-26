@@ -110,8 +110,10 @@ $scope.login = function() {
 	var count = 0;
 
 	 Events.query().$promise.then(function(response){
-		 
+		 if(response.length>1)
 		$scope.eventslol = [response[Math.floor(Math.random() * response.length-1)]];
+	else
+		$scope.eventslol = [response[0]];
 	  });
 	 $scope.newEvent = function(){
 		 count++;
@@ -126,4 +128,15 @@ $scope.login = function() {
 	$scope.go  = function ( path ) {
 	  $location.path( path );
 	};
+})
+.controller('EventCardCtrl',function($scope,$location, Events) {
+
+	 Events.query().$promise.then(function(response){
+		 
+		$scope.eventslol = [response[Math.floor(Math.random() * response.length-1)]];
+	  });
+	 
+	/*$scope.go  = function ( path ) {
+	  $location.path( path );
+	};*/
 })
