@@ -1,30 +1,40 @@
 .navBar {
 color:#FFFFFF!important;
-background-color:#0B51D4!important; // for bg color
+background-color:#0B51D4!important;
  }
  
   
 .navBarTitles {
 color:#FFFFFF!important;
-background-color:#0B51D4!important; // for bg color
+background-color:#0B51D4!important;
 border:none!important;
 font-family: 'Slabo 13px', serif;
  }
  
  .title.title-center.header-item {
-        background-color:#0B51D4!important; // for bg color
-        margin:auto;
-        /* 0px!important; */
-        /* margin-left:0px!important; */
-        
-        color: #ffffff!important;
-        width: auto;
-        font-family: 'Slabo 13px', serif;
-    }
+background-color:#0B51D4!important;
+margin:auto;
+/* 0px!important; */
+/* margin-left:0px!important; */
+
+color: #ffffff!important;
+width: auto;
+font-family: 'Slabo 13px', serif;
+}
     
-  .headerIcon {
-          color: #ffffff!important;
-          }
+.headerIcon {
+color: #ffffff!important;       
+}
+          
+.pageContent{
+horizontal-alignment:center;
+margin:auto;
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    width:100%;
+}
 
 
 .discoverCardBackground{
@@ -43,8 +53,8 @@ border-radius: 10px!important;
  max-width: 250px;
  margin-left:auto;
  margin-right:auto;
- position: absolute;
  horizontal-alignment:center;
+ margin-top:24px;
 }
 
 
