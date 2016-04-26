@@ -60,7 +60,8 @@ border-radius: 10px!important;
 .profilePageUsername{
 font-family: 'Slabo 13px', serif;
 font-size: 20px;
-margin:16px;
+margin-top:16px;
+margin-bottom:8px;
 }
 
 .profilePagePoints{
@@ -72,11 +73,39 @@ margin:16px;
   -webkit-flex-direction: row; /* Safari */
   flex-direction:         row;
   width:100%;
+  margin:8px;
+  margin-bottom:16px;
+}
+
+.profilePageControlLabel{
+text-align:right;
+max-width:24%;
+}
+
+.profilePageControlInput{
+padding-right:48px;
+padding-left:16px;
+max-width:80%;
+justify-content: flex-start;
+}
+
+.toggleLabel{
+margin: 8px;
+font-size: 14px;
+}
+
+.toggle{
+top:8px;
+}
+
+.toggle input:checked + .track {
+  border-color: #e65100 !important;
+  background-color: #f57c00 !important;
 }
 
 .flex-item {
-    background-color: cornflowerblue;
     margin:auto;
+    width:100%;
 }
 
 /*  Buttons */

@@ -5,20 +5,40 @@
 		<img class="profileImage" src="/img/profPic.jpg">
 		<div class="profilePageUsername">@jamauer</div>
 		<div class="profilePagePoints">2,467 points</div>
-		
+		<br>
 		<div class="profilePageControls">
 			
-			<div flex class="flex-item" id="accountPrivacy" layout="row" layout-fill>
-			  <span flex="20">
-				[flex="20"]
-			  </span>
-			  <span flex="80">
-				[flex="70"]
-			  </span>
+			<div flex class="flex-item profilePageControlLabel" layout="row" layout-fill>
+				Account Privacy
+		  	</div>
+		  	
+		  	<div flex class="flex-item profilePageControlInput" id="accountPrivacy" layout="row" layout-fill>
+					<span class="toggleLabel">Public</span>
+					<label class="toggle">
+					   <input type="checkbox">
+					   <div class="track">
+						 <div class="handle"></div>
+					   </div>
+					</label>
+					<span class="toggleLabel">Private</span>
+				</div>
+		</div>
+		<div class="profilePageControls">
+
+				<div flex class="flex-item profilePageControlLabel" layout="row" layout-fill>
+				Discovery Radius
+		  		</div>
+		  	
+		  	<div flex class="flex-item profilePageControlInput" id="accountPrivacy" layout="row" layout-fill>
+				<div class="range range-positive">
+					<span class="toggleLabel">0 mi.</span>
+					<input type="range" name="volume" min="0" max="100" value="33">
+					<span class="toggleLabel">50 mi.</span>
+				  </div>
+				  
 			</div>
+				
 			
-			<div id="discoveryRadius">
-			</div>
 		</div>
 
 	</div>
