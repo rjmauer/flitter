@@ -149,3 +149,13 @@ background: $assertive;
 overflow:visible;
 position:relative;
 }
+
+.emailUs{
+	font-size:50px;
+	background-color:blue;
+}
+
+.helpButton{
+	float:left;
+	margin: 20px;
+}
