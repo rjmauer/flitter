@@ -27,47 +27,24 @@ font-family: 'Slabo 13px', serif;
           }
 
 
-discoverCardBackground{
+.discoverCardBackground{
 /* CardBackground: */
-background: #0B51D4;
 border: 1px solid #979797;
-border-radius: 10px;
+border-radius: 5px;
 }
-discoverCard{
-/* discoverWhenLabel: */
-font-family: OpenSans;
-font-size: 17.72px;
-color: #232323;
-/* discoverWhereLabel: */
-font-family: OpenSans;
-font-size: 17.72px;
-color: #232323;
-/* Mask: */
-background: #D8D8D8;
-border-radius: 10px;
-/* Event Title: */
-font-family: Slabo13px-Regular;
-font-size: 23.63px;
-color: #232323;
-/* discoverWhen: */
-font-family: OpenSans;
-font-size: 17.72px;
-color: #232323;
-/* discoverWhere: */
-font-family: OpenSans;
-font-size: 17.72px;
-color: #232323;
-/* cardActionHighlightButton: */
-background: #00E4FF;
-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.50);
-/* networkAttendeesNum: */
-font-family: OpenSans-Semibold;
-font-size: 22.15px;
-color: #FFFFFF;
-/* totalAttendeesNum: */
-font-family: OpenSans-Semibold;
-font-size: 22.15px;
-color: #FFFFFF;
+.discoverCard{
+border: 1px solid #979797;
+border-radius: 10px!important;
+}
+
+.profileImage{
+-webkit-clip-path: circle(50% at 50% 50%);
+ clip-path: circle(100px at center);
+ max-width: 250px;
+ margin-left:auto;
+ margin-right:auto;
+ position: absolute;
+ horizontal-alignment:center;
 }
 
 
