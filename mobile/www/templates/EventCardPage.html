@@ -1,8 +1,8 @@
-<ion-view view-title="Books, Brews, and..." class="discover-page">
+<ion-view view-title="Discover" class="discover-page">
   <ion-content scroll="false">
 
-      
-        <h2> Books, Brews and BBQ spring fundraiser</h2>
+      <div ng-repeat="Events in eventslol">
+        <h2> {{Events.title}}</h2>
         
 	
 
@@ -21,10 +21,10 @@
    
    <p>
   
-   Come have a good time at our annual Books, Brews, and BBQ spring fundraiser! All are welcome to come.
+   {{Events.description}}
 </p>
 
-<p>When: Saturday, May 21 @ 6 PM</p>
+<p>When: {{Events.date}} , {{Events.time}}</p>
 <p>Where: Collegeville Park</p>
 
 
@@ -39,7 +39,7 @@
         </a>
       </div>
 
-
+</div>
 
 
   </ion-content>

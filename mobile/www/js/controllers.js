@@ -108,32 +108,48 @@ $scope.login = function() {
 })
 .controller('EventCtrl', function($scope,$location, Events) {
 	var count = 0;
-
+	var	toGo;
+	
 	 Events.query().$promise.then(function(response){
-		 if(response.length>1)
-		$scope.eventslol = [response[Math.floor(Math.random() * response.length-1)]];
-	else
-		$scope.eventslol = [response[0]];
+		
+		if(response.length>1){
+			//var random = Math.floor(Math.random() * response.length-1);
+			$scope.eventslol = [response[0]];
+			toGo = response[0].id;
+		}else{
+			$scope.eventslol = [response[0]];
+			toGo = response[0].id;
+			//currentEvent.href =  "/#/app/EventCardPage?eventId=";
+		 }
 	  });
 	 $scope.newEvent = function(){
+		 var currents = document.getElementById("currentEvent");
 		 count++;
-		 
 		 Events.query().$promise.then(function(response){
 			if(count>=response.length){
 				count = 0;
 			}
 			$scope.eventslol = [response[count]];
+			toGo = response[count].id;
+			//currentEvent.href = "/#/app/EventCardPage?eventId=" + response[count].id;
 		});
 	 }
-	$scope.go  = function ( path ) {
-	  $location.path( path );
+	$scope.goTo  = function () {
+		document.getElementById("currentEvent").href = "/#/app/EventCardPage?eventId="+toGo;
 	};
 })
 .controller('EventCardCtrl',function($scope,$location, Events) {
-
+	var page = window.location.href;
+	var id;
+	for(var i =0; i<page.length; i++){
+		if(page.charAt(i)=="="){
+			id  = page.substring(i+1);
+		}
+	}
+	console.log(id);
 	 Events.query().$promise.then(function(response){
 		 
-		$scope.eventslol = [response[Math.floor(Math.random() * response.length-1)]];
+		$scope.eventslol = [response[id-1]];
 	  });
 	 
 	/*$scope.go  = function ( path ) {
