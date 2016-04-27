@@ -67,12 +67,12 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
         }
       }
     })
-	.state('app.bbqEventPage', {
-      url: '/bbqEventPage',
+	.state('app.EventCardPage', {
+      url: '/EventCardPage',
       views: {
         'menuContent': {
-          templateUrl: 'templates/bbqEventPage.html',
-		  controller: 'EventCtrl'
+          templateUrl: 'templates/EventCardPage.html',
+		  controller: 'EventCardCtrl'
         }
       }
     })
