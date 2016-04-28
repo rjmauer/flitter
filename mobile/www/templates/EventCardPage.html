@@ -1,12 +1,12 @@
 <ion-view view-title="Discover" class="discover-page">
   <ion-content scroll="false">
 
-      <div ng-repeat="Events in eventslol">
-        <h2> {{Events.title}}</h2>
+      <div class="pageContent" ng-repeat="Events in eventslol">
+        <div class="eventPageTitle"> {{Events.title}}</div>
         
 	
 
-	<img ng-src="/img/bbq.jpg" height = "200px" width = "300px">
+	<img class="eventImage" ng-src="/img/bbq.jpg">
    
      <div class="item tabs tabs-secondary tabs-icon-left">
         <a class="tab-item">
@@ -19,14 +19,36 @@
         </a>
       </div>
    
-   <p>
-  
-   {{Events.description}}
-</p>
-
-<p>When: {{Events.date}} , {{Events.time}}</p>
-<p>Where: Collegeville Park</p>
-
+   <div class="profilePageControls">
+			
+			<div flex class="flex-item profilePageControlLabel" layout="row" layout-fill>
+				Description:
+		  	</div>
+	   <span flex class="flex-item eventCardPageData" layout="row" layout-fill>
+		   {{Events.description}}
+		</span>
+	</div>
+	
+	<div class="profilePageControls">
+		
+		<div flex class="flex-item profilePageControlLabel" layout="row" layout-fill>
+				When:
+		  	</div>
+	   <span flex class="flex-item eventCardPageData" layout="row" layout-fill>
+		   {{Events.date}} , {{Events.time}}
+		</span>
+	</div>
+	
+	<div class="profilePageControls">
+		
+		<div flex class="flex-item profilePageControlLabel" layout="row" layout-fill>
+				Where:
+		  	</div>
+	   <span flex class="flex-item eventCardPageData" layout="row" layout-fill>
+		   {{Events.location}}
+		</span>
+		
+	</div>
 
       <div class="item tabs tabs-secondary tabs-icon-left">
         <a class="tab-item" ng-click = "newEvent()" >

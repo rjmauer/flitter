@@ -63,7 +63,8 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
       url: '/profilePage',
       views: {
         'menuContent': {
-          templateUrl: 'templates/profilePage.html'
+          templateUrl: 'templates/profilePage.html',
+          controller: 'MyController'
         }
       }
     })

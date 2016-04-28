@@ -40,11 +40,29 @@ display: block;
 .discoverCardBackground{
 /* CardBackground: */
 border: 1px solid #979797;
-border-radius: 5px;
+/* border-radius: 5px; */
 }
 .discoverCard{
 border: 1px solid #979797;
-border-radius: 10px!important;
+/* border-radius: 10px!important; */
+}
+
+.eventImage{
+ max-height: 250px;
+ margin-left:auto;
+ margin-right:auto;
+ horizontal-alignment:center;
+}
+
+.eventCardPageData{
+text-align:left;
+padding-left:16px;
+}
+
+.eventPageTitle{
+font-family: 'Slabo 13px', serif;
+font-size: 20px;
+margin:16px;
 }
 
 .profileImage{
