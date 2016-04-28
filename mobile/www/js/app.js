@@ -42,11 +42,11 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
     }
   })
 
-  .state('app.settings', {
-      url: '/settings',
+  .state('app.yourFriends', {
+      url: '/yourFriends',
       views: {
         'menuContent': {
-          templateUrl: 'templates/settings.html'
+          templateUrl: 'templates/yourFriends.html'
         }
       }
     })
