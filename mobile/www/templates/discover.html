@@ -7,37 +7,38 @@
       <div class="discoverCard item">
         <h2>Books, Brews and BBQ spring fundraiser</h2>
         <p>	Saturday, May 21 @ 6 PM</p>-->
-    <div class="list card current-song discoverCard discoverCardBackground" ng-repeat="Events in eventslol">
+	<div class="pageContent">
+		<div class="list card current-song discoverCard discoverCardBackground" ng-repeat="Events in eventslol">
 
-      <div class="item">
-        <h2>{{Events.title}}</h2>
-        <p>	{{Events.date}} {{Events.time}}</p>
-      </div>
-<!--href = '/#/app/EventCardPage?eventId='{{Events.id}}''-->
-	<a  href = ""id = "currentEvent"><img ng-click="goTo()" ng-src="/img/bbq.jpg" height = "200px" width = "300px"></a>
-      <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" style="background-color:#fff3e0">
-          <i class="icon ion-ios-color-filter-outline" ></i>
-          77 Coming
-        </a>
-        <a class="tab-item" style="background-color:#fff3e0">
-          <i class="icon ion-ios-contact-outline" ></i>
-          5 Friends
-        </a>
-      </div>
+		  <div class="item">
+			<div class="eventPageTitle">{{Events.title}}</div>
+			<p>	{{Events.date}} {{Events.time}}</p>
+		  </div>
+	<!--href = '/#/app/EventCardPage?eventId='{{Events.id}}''-->
+		<a  href = ""id = "currentEvent"><img ng-click="goTo()" ng-src="/img/bbq.jpg" class="eventImage"></a>
+		  <div class="item tabs tabs-secondary tabs-icon-left">
+			<a class="tab-item" style="background-color:#fff3e0">
+			  <i class="icon ion-ios-color-filter-outline" ></i>
+			  77 Coming
+			</a>
+			<a class="tab-item" style="background-color:#fff3e0">
+			  <i class="icon ion-ios-contact-outline" ></i>
+			  5 Friends
+			</a>
+		  </div>
 
-      <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" style="background-color:#00e4ff" ng-click = "newEvent()" >
-          <i class="icon ion-close" ></i>
-          Pass
-        </a>
-        <a class="tab-item" style="background-color:#ffb74d" ng-click = "newEvent()">
-          <i class="icon ion-heart" ></i>
-          Interested
-        </a>
-      </div>
-    </div>
-
+		  <div class="item tabs tabs-secondary tabs-icon-left">
+			<a class="tab-item" style="background-color:#00e4ff" ng-click = "newEvent()" >
+			  <i class="icon ion-close" ></i>
+			  Pass
+			</a>
+			<a class="tab-item" style="background-color:#ffb74d" ng-click = "newEvent()">
+			  <i class="icon ion-heart" ></i>
+			  Interested
+			</a>
+		  </div>
+		</div>
+	</div>
 
   </ion-content>
 </ion-view>
