@@ -38,14 +38,28 @@ display: block;
 
 
 .discoverCardBackground{
-/* CardBackground: */
 border: 1px solid #979797;
-/* border-radius: 5px; */
+background-color:#FFFFFF;
+overflow:hidden;
+height:inherit;
 }
 .discoverCard{
 border: 1px solid #979797;
-/* border-radius: 10px!important; */
 }
+
+.discoverCardTitle{
+font-family: 'Slabo 13px', serif;
+font-size: 18px;
+margin-left:16px;
+margin-right:16px;
+margin-top:8px;
+margin-bottom:8px;
+}
+
+.discoverCardData{
+margin:8px;
+}
+
 /* Ionic Tinder */
 td-cards {
   display: block;
