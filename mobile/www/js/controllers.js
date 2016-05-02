@@ -73,7 +73,7 @@ $scope.login = function() {
 	 var z = document.getElementById("loc");
 	 
   // calling our submit function.
-    $scope.submitForm = function() {
+    $scope.submitForm = function(){
 			console.log($scope.party.time);
 		$scope.events = {
 			"event": {"title": $scope.party.title, "date": $scope.party.date, "time":$scope.party.time, "description": $scope.party.description}
@@ -105,7 +105,6 @@ $scope.login = function() {
 		x.innerHTML = "(" + position.coords.latitude + 
     "," + position.coords.longitude+")";  
 	}
-	
 })
 
 
