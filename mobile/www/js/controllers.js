@@ -156,7 +156,54 @@ $scope.login = function() {
 	  $location.path( path );
 	};*/
 })
-.controller('MyController', function($scope, $ionicPopover) {
+
+.directive('noScroll', function() {
+
+  return {
+    restrict: 'A',
+    link: function($scope, $element, $attr) {
+
+      $element.on('touchmove', function(e) {
+        e.preventDefault();
+      });
+    }
+  }
+})
+
+.controller('CardsCtrl', function($scope, TDCardDelegate) {
+  console.log('CARDS CTRL');
+  var cardTypes = [
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg'}
+  ];
+
+  $scope.cards = Array.prototype.slice.call(cardTypes, 0);
+
+  $scope.cardDestroyed = function(index) {
+    $scope.cards.splice(index, 1);
+  };
+
+  $scope.addCard = function() {
+    var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+    newCard.id = Math.random();
+    $scope.cards.push(angular.extend({}, newCard));
+  }
+})
+
+  .controller('CardCtrl', function($scope, TDCardDelegate) {
+  $scope.cardSwipedLeft = function(index) {
+    console.log('LEFT SWIPE');
+    $scope.addCard();
+  };
+  $scope.cardSwipedRight = function(index) {
+    console.log('RIGHT SWIPE');
+    $scope.addCard();
+  };
+})
+
+.controller('ProfileController', function($scope, $ionicPopover) {
 
   // .fromTemplate() method
   var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';

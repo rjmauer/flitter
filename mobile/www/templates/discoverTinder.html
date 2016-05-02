@@ -1,0 +1,63 @@
+<ion-view view-title="DiscoverTinder" class="discover-tinder-page">
+  <ion-content scroll="false">
+
+    <ion-pane ng-controller="CardsCtrl">
+      <ion-header-bar class="bar-default">
+        <h1 class="title">TD Cards</h1>
+      </ion-header-bar>
+
+      <td-cards>
+        <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+          <div class="image" ng-controller="CardCtrl">
+            <div class="no-text">NOPE</div>
+            <img ng-src="{{card.image}}">
+            <div class="yes-text">LIKE</div>
+          </div>
+          
+		  <div class="item tabs tabs-secondary tabs-icon-left">
+			<a class="tab-item" style="background-color:#fff3e0">
+			  <i class="icon ion-ios-color-filter-outline" ></i>
+			  77 Coming
+			</a>
+			<a class="tab-item" style="background-color:#fff3e0">
+			  <i class="icon ion-ios-contact-outline" ></i>
+			  5 Friends
+			</a>
+		  </div>
+
+		  <div class="item tabs tabs-secondary tabs-icon-left">
+			<a class="tab-item" style="background-color:#00e4ff" ng-click = "newEvent()" >
+			  <i class="icon ion-close" ></i>
+			  Pass
+			</a>
+			<a class="tab-item" style="background-color:#ffb74d" ng-click = "newEvent()">
+			  <i class="icon ion-heart" ></i>
+			  Interested
+			</a>
+		  </div>
+		  
+		</div>
+        </td-card>
+      </td-cards>
+    </ion-pane>
+
+
+  </ion-content>
+</ion-view>
+
+<script>
+angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
+
+  .directive('noScroll', function($document) {
+
+  return {
+    restrict: 'A',
+    link: function($scope, $element, $attr) {
+
+      $document.on('touchmove', function(e) {
+        e.preventDefault();
+      });
+    }
+  }
+})
+</script>
