@@ -11,11 +11,12 @@
 		<div class="list card current-song discoverCard discoverCardBackground" ng-repeat="Events in eventslol">
 
 		  <div class="item">
-			<div class="eventPageTitle">{{Events.title}}</div>
+			<div class="eventPageTitle">{{Events.title}}{{Events.image}}</div>
 			<p>	{{Events.date}} {{Events.time}}</p>
 		  </div>
 	<!--href = '/#/app/EventCardPage?eventId='{{Events.id}}''-->
 		<a  href = ""id = "currentEvent"><img ng-click="goTo()" ng-src="/img/bbq.jpg" class="eventImage"></a>
+		
 		  <div class="item tabs tabs-secondary tabs-icon-left">
 			<a class="tab-item" style="background-color:#fff3e0">
 			  <i class="icon ion-ios-color-filter-outline" ></i>
@@ -37,6 +38,7 @@
 			  Interested
 			</a>
 		  </div>
+		  
 		</div>
 	</div>
 
