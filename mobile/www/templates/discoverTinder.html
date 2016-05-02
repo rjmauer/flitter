@@ -7,13 +7,28 @@
       </ion-header-bar>
 
       <td-cards>
-        <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
-          <div class="image" ng-controller="CardCtrl">
-            <div class="no-text">NOPE</div>
-            <img ng-src="{{card.image}}">
-            <div class="yes-text">LIKE</div>
-          </div>
+        <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}} discoverCardBackground">
           
+		  <div class="discoverCardTitle">
+		  	BBQ & Brews - 14th Annual Picnic
+		  </div>
+
+		  <div class="image" ng-controller="CardCtrl">
+			<div class="no-text">NOPE</div>
+			<img ng-src="{{card.image}}">
+			<div class="yes-text">LIKE</div>
+		  </div>
+		  
+		  <div class="discoverCardData"> 
+		  	<span class="discoverCardLabel">When:</span>
+		  	<span class="discoverCardEventData">Saturday, May 21 @ 6 PM</span>
+		  </div>
+		  
+		  <div class="discoverCardData"> 
+		  	<span class="discoverCardLabel">Where:</span>
+		  	<span class="discoverCardEventData">Grist Mill, Hellertown, Pennsylvania 18055</span>
+		  </div>
+		  
 		  <div class="item tabs tabs-secondary tabs-icon-left">
 			<a class="tab-item" style="background-color:#fff3e0">
 			  <i class="icon ion-ios-color-filter-outline" ></i>
@@ -24,19 +39,7 @@
 			  5 Friends
 			</a>
 		  </div>
-
-		  <div class="item tabs tabs-secondary tabs-icon-left">
-			<a class="tab-item" style="background-color:#00e4ff" ng-click = "newEvent()" >
-			  <i class="icon ion-close" ></i>
-			  Pass
-			</a>
-			<a class="tab-item" style="background-color:#ffb74d" ng-click = "newEvent()">
-			  <i class="icon ion-heart" ></i>
-			  Interested
-			</a>
-		  </div>
-		  
-		</div>
+		
         </td-card>
       </td-cards>
     </ion-pane>
