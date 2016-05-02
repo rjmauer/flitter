@@ -215,6 +215,10 @@ top:8px;
   padding: 8px;
 }
 
+.addFriendButton{
+	background-color:#ffb74d!important;
+}
+
 /* Objects & Containers */
 .planCard {
 margin: 8px;
@@ -305,6 +309,10 @@ body {
     color:black;
 }
 
-.addFriendButton{
-	background-color:#ffb74d!important;
+.deleteEventTag{
+	color:#e65100!important
+}
+
+deleteEventTag:hover{
+	color:red!important
 }

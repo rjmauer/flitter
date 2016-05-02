@@ -65,6 +65,7 @@ $scope.login = function() {
   );
 }*/
 })
+
 .controller('CreateCtrl', function($scope, $http, $ionicPopup) {
   // create a blank object to handle form data.
 	$scope.party = {};
@@ -106,6 +107,8 @@ $scope.login = function() {
 	}
 	
 })
+
+
 .controller('EventCtrl', function($scope,$location, Events) {
 	var count = 0;
 	var	toGo;
@@ -138,6 +141,7 @@ $scope.login = function() {
 		document.getElementById("currentEvent").href = "/#/app/EventCardPage?eventId="+toGo;
 	};
 })
+
 .controller('EventCardCtrl',function($scope,$location, Events) {
 	var page = window.location.href;
 	var id;
