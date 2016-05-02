@@ -2,9 +2,6 @@
   <ion-content scroll="false">
 
     <ion-pane ng-controller="CardsCtrl">
-      <ion-header-bar class="bar-default">
-        <h1 class="title">TD Cards</h1>
-      </ion-header-bar>
 
       <td-cards>
         <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}} discoverCardBackground">
@@ -42,7 +39,19 @@
 		
         </td-card>
       </td-cards>
+      
+          
+    <div class="discoverBottomControls">
+    	<img src="/img/combinedShape.png" class="discoverBottomBackground">
+    	<div class="discoverBottomButtons">
+			<img src="/img/flitterButton.png" class="discoverBottomFlitter">
+			<img src="/img/passButton.png" class="discoverBottomPass">
+			<img src="/img/favoriteButton.png" class="discoverBottomFavorite">
+		</div>
+    </div>
+      
     </ion-pane>
+
 
 
   </ion-content>
