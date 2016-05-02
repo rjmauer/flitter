@@ -1,20 +1,15 @@
 <ion-view view-title="Discover" class="discover-page">
   <ion-content scroll="false">
 
-
-   <!-- <div class="list card current-song discoverCardBackground">
-
-      <div class="discoverCard item">
-        <h2>Books, Brews and BBQ spring fundraiser</h2>
-        <p>	Saturday, May 21 @ 6 PM</p>-->
 	<div class="pageContent">
+<!-- 
 		<div class="list card current-song discoverCard discoverCardBackground" ng-repeat="Events in eventslol">
 
 		  <div class="item">
 			<div class="eventPageTitle">{{Events.title}}{{Events.image}}</div>
 			<p>	{{Events.date}} {{Events.time}}</p>
 		  </div>
-	<!--href = '/#/app/EventCardPage?eventId='{{Events.id}}''-->
+	<!~~href = '/#/app/EventCardPage?eventId='{{Events.id}}''~~>
 		<a  href = ""id = "currentEvent"><img ng-click="goTo()" ng-src="/img/bbq.jpg" class="eventImage"></a>
 		
 		  <div class="item tabs tabs-secondary tabs-icon-left">
@@ -40,7 +35,59 @@
 		  </div>
 		  
 		</div>
+ -->
 	</div>
+
+<ion-pane>
+
+      <td-cards>
+        <td-card ng-repeat="Events in eventslol" on-destroy="cardDestroyed($index)" on-swipe-left="newEvent()" on-swipe-right="newEvent()" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}} discoverCardBackground">
+          
+		  <div class="discoverCardTitle">
+		  	{{Events.title}}
+		  </div>
+
+		  <div class="image" ng-controller="CardCtrl">
+			<div class="no-text">NOPE</div>
+			<img ng-src="/img/bbq.jpg">
+			<div class="yes-text">LIKE</div>
+		  </div>
+		  
+		  <div class="discoverCardData"> 
+		  	<span class="discoverCardLabel">When:</span>
+		  	<span class="discoverCardEventData">{{Events.date}} {{Events.time}}</span>
+		  </div>
+		  
+		  <div class="discoverCardData"> 
+		  	<span class="discoverCardLabel">Where:</span>
+		  	<span class="discoverCardEventData">Grist Mill, Hellertown, Pennsylvania 18055</span>
+		  </div>
+		  
+		  <div class="item tabs tabs-secondary tabs-icon-left" style="background-color:#fff3e0; border:none; border-radius:10px;">
+			<a class="tab-item" style="background-color:#fff3e0; border:none;">
+			  <i class="icon ion-ios-color-filter-outline" ></i>
+			  77 Coming
+			</a>
+			<a class="tab-item" style="background-color:#fff3e0">
+			  <i class="icon ion-ios-contact-outline" ></i>
+			  5 Friends
+			</a>
+		  </div>
+		
+        </td-card>
+      </td-cards>
+      
+          
+    <div class="discoverBottomControls">
+    	<img src="/img/combinedShape.png" class="discoverBottomBackground">
+    	<div class="discoverBottomButtons">
+			<img src="/img/flitterButton.png" class="discoverBottomFlitter" ng-click = "newEvent()">
+			<img src="/img/passButton.png" class="discoverBottomPass" ng-click = "newEvent()">
+			<img src="/img/favoriteButton.png" class="discoverBottomFavorite" ng-click = "newEvent()">
+		</div>
+    </div>
+      
+    </ion-pane>
 
   </ion-content>
 </ion-view>

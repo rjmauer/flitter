@@ -140,6 +140,26 @@ $scope.login = function() {
 	$scope.goTo  = function () {
 		document.getElementById("currentEvent").href = "/#/app/EventCardPage?eventId="+toGo;
 	};
+	
+	//CARD CONTROLLERS//
+	var cardTypes = [
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg'}
+  ];
+
+  $scope.cards = Array.prototype.slice.call(cardTypes, 0);
+
+  $scope.cardDestroyed = function(index) {
+    $scope.cards.splice(index, 1);
+  };
+
+  $scope.addCard = function() {
+    var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+    newCard.id = Math.random();
+    $scope.cards.push(angular.extend({}, newCard));
+  }
 })
 
 .controller('EventCardCtrl',function($scope,$location, Events) {

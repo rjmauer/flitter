@@ -21,6 +21,12 @@ color: #ffffff!important;
 width: auto;
 font-family: 'Slabo 13px', serif;
 }
+
+.back-button.buttons.button-clear.header-item{
+color: #ffffff!important;
+width: auto;
+font-family: 'Slabo 13px', serif;
+}
     
 .headerIcon {
 color: #ffffff!important;       
