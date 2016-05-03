@@ -21,6 +21,12 @@ color: #ffffff!important;
 width: auto;
 font-family: 'Slabo 13px', serif;
 }
+
+.back-button.buttons.button-clear.header-item{
+color: #ffffff!important;
+width: auto;
+font-family: 'Slabo 13px', serif;
+}
     
 .headerIcon {
 color: #ffffff!important;       
@@ -38,13 +44,132 @@ display: block;
 
 
 .discoverCardBackground{
-/* CardBackground: */
 border: 1px solid #979797;
-/* border-radius: 5px; */
+background-color:#FFFFFF;
+overflow:hidden;
+height:inherit;
 }
 .discoverCard{
 border: 1px solid #979797;
-/* border-radius: 10px!important; */
+}
+
+.discoverCardTitle{
+font-family: 'Slabo 13px', serif;
+font-size: 18px;
+margin-left:16px;
+margin-right:16px;
+margin-top:8px;
+margin-bottom:8px;
+  width: 285px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.discoverCardData{
+margin:8px;
+  width: 285px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.discoverBottomControls{
+position:fixed;
+bottom:48px;
+width:100%;
+}
+
+.discoverBottomButtons{
+width:auto;
+margin-left:auto;
+margin-right:auto;
+display:block;
+position:relative;
+}
+
+.discoverBottomBackground{
+max-height:180px;
+margin-left:auto;
+margin-right:auto;
+display:block;
+position:relative;
+}
+
+.discoverBottomFlitter{
+max-height:80px;
+position:absolute;
+top:50%;
+left:50%;
+-webkit-transform:translateY(-210%) translateX(-50%);
+}
+
+.discoverBottomFavorite{
+max-height:100px;
+position:absolute;
+top:50%;
+left:50%;
+-webkit-transform:translateY(-115%) translateX(30%);
+}
+
+.discoverBottomPass{
+max-height:100px;
+position:absolute;
+top:50%;
+left:50%;
+-webkit-transform:translateY(-115%) translateX(-129%);
+}
+
+/* Ionic Tinder */
+td-cards {
+  display: block;
+}
+/* Ionic Tinder */
+td-card {
+  position: absolute;
+  left: 50%;
+  margin-top: 48px;
+  margin-bottom: 40px;
+  margin-left: -150px;
+  width: 300px;
+  height: 300px;
+
+  border: 1px solid #999;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 6px;
+}
+/* Ionic Tinder */
+td-card .image {
+  position: relative;
+}
+/* Ionic Tinder */
+td-card img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+/* Ionic Tinder */
+.yes-text {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  color: rgb(111, 250, 111);
+  opacity: 0;
+}
+/* Ionic Tinder */
+.no-text {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: rgb(255, 115, 115);
+  opacity: 0;
+}
+/* Ionic Tinder */
+.fade {
+  -webkit-transition: 0.2s opacity linear;
+  transition: 0.2s opacity linear;
+  opacity: 0;
 }
 
 .eventImage{
@@ -164,6 +289,10 @@ top:8px;
   padding: 8px;
 }
 
+.addFriendButton{
+	background-color:#0bdebe!important;
+}
+
 /* Objects & Containers */
 .planCard {
 margin: 8px;
@@ -254,6 +383,10 @@ body {
     color:black;
 }
 
-.addFriendButton{
-	background-color:#ffb74d!important;
+.deleteEventTag{
+	color:#e65100!important
+}
+
+deleteEventTag:hover{
+	color:red!important
 }

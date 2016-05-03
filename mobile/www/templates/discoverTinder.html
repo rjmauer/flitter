@@ -1,0 +1,58 @@
+<ion-view view-title="DiscoverTinder" class="discover-tinder-page">
+  <ion-content scroll="false">
+
+    <ion-pane ng-controller="CardsCtrl">
+
+      <td-cards>
+        <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}} discoverCardBackground">
+          
+		  <div class="discoverCardTitle">
+		  	BBQ & Brews - 14th Annual Picnic
+		  </div>
+
+		  <div class="image" ng-controller="CardCtrl">
+			<div class="no-text">NOPE</div>
+			<img ng-src="{{card.image}}">
+			<div class="yes-text">LIKE</div>
+		  </div>
+		  
+		  <div class="discoverCardData"> 
+		  	<span class="discoverCardLabel">When:</span>
+		  	<span class="discoverCardEventData">Saturday, May 21 @ 6 PM</span>
+		  </div>
+		  
+		  <div class="discoverCardData"> 
+		  	<span class="discoverCardLabel">Where:</span>
+		  	<span class="discoverCardEventData">Grist Mill, Hellertown, Pennsylvania 18055</span>
+		  </div>
+		  
+		  <div class="item tabs tabs-secondary tabs-icon-left">
+			<a class="tab-item" style="background-color:#fff3e0">
+			  <i class="icon ion-ios-color-filter-outline" ></i>
+			  77 Coming
+			</a>
+			<a class="tab-item" style="background-color:#fff3e0">
+			  <i class="icon ion-ios-contact-outline" ></i>
+			  5 Friends
+			</a>
+		  </div>
+		
+        </td-card>
+      </td-cards>
+      
+          
+    <div class="discoverBottomControls">
+    	<img src="/img/combinedShape.png" class="discoverBottomBackground">
+    	<div class="discoverBottomButtons">
+			<img src="/img/flitterButton.png" class="discoverBottomFlitter">
+			<img src="/img/passButton.png" class="discoverBottomPass">
+			<img src="/img/favoriteButton.png" class="discoverBottomFavorite">
+		</div>
+    </div>
+      
+    </ion-pane>
+
+
+
+  </ion-content>
+</ion-view>

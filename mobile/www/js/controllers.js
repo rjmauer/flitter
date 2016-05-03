@@ -65,15 +65,16 @@ $scope.login = function() {
   );
 }*/
 })
+
 .controller('CreateCtrl', function($scope, $http, $ionicPopup) {
   // create a blank object to handle form data.
 	$scope.party = {};
 	 var y = document.getElementById("eventForm");
 	 var z = document.getElementById("loc");
 	 
-  // calling our submit function.
-    $scope.submitForm = function() {
-			
+    $scope.submitForm = function(){
+			console.log($scope.party.time);
+
 		$scope.events = {
 			"event": {"title": $scope.party.title, "date": $scope.party.date, "time":$scope.party.time, "location": $scope.party.loc, "description": $scope.party.description, "image": $scope.party.img}
 		};
@@ -104,8 +105,9 @@ $scope.login = function() {
 		x.innerHTML = "(" + position.coords.latitude + 
     "," + position.coords.longitude+")";  
 	}
-	
 })
+
+
 .controller('EventCtrl', function($scope,$location, Events) {
 	var count = 0;
 	var	toGo;
@@ -145,7 +147,29 @@ $scope.login = function() {
 //x.src = myImg;
 		 console.log(x.src);
     };
+
+	
+	//CARD CONTROLLERS//
+	var cardTypes = [
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg'}
+  ];
+
+  $scope.cards = Array.prototype.slice.call(cardTypes, 0);
+
+  $scope.cardDestroyed = function(index) {
+    $scope.cards.splice(index, 1);
+  };
+
+  $scope.addCard = function() {
+    var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+    newCard.id = Math.random();
+    $scope.cards.push(angular.extend({}, newCard));
+  }
 })
+
 .controller('EventCardCtrl',function($scope,$location, Events) {
 	var page = window.location.href;
 	var id;
@@ -171,7 +195,54 @@ $scope.login = function() {
 
  
 })
-.controller('MyController', function($scope, $ionicPopover) {
+
+.directive('noScroll', function() {
+
+  return {
+    restrict: 'A',
+    link: function($scope, $element, $attr) {
+
+      $element.on('touchmove', function(e) {
+        e.preventDefault();
+      });
+    }
+  }
+})
+
+.controller('CardsCtrl', function($scope, TDCardDelegate) {
+  console.log('CARDS CTRL');
+  var cardTypes = [
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg' },
+    { image: '/img/bbq.jpg'}
+  ];
+
+  $scope.cards = Array.prototype.slice.call(cardTypes, 0);
+
+  $scope.cardDestroyed = function(index) {
+    $scope.cards.splice(index, 1);
+  };
+
+  $scope.addCard = function() {
+    var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+    newCard.id = Math.random();
+    $scope.cards.push(angular.extend({}, newCard));
+  }
+})
+
+  .controller('CardCtrl', function($scope, TDCardDelegate) {
+  $scope.cardSwipedLeft = function(index) {
+    console.log('LEFT SWIPE');
+    $scope.addCard();
+  };
+  $scope.cardSwipedRight = function(index) {
+    console.log('RIGHT SWIPE');
+    $scope.addCard();
+  };
+})
+
+.controller('ProfileController', function($scope, $ionicPopover) {
 
   // .fromTemplate() method
   var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';

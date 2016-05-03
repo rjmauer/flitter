@@ -1,5 +1,5 @@
 <ion-side-menus enable-menu-with-back-views="false">
-  <ion-side-menu-content>
+  <ion-side-menu-content drag-content="false">
     <ion-nav-bar class="navBar bar-stable ">
       <ion-nav-back-button>
       </ion-nav-back-button>
@@ -40,6 +40,9 @@
 		<ion-item menu-close href="#/app/contactUs" >
           Contact Us
         </ion-item>
+        <ion-item menu-close href="#/app/discoverTinder" >
+          Discover-Tinder
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>
@@ -53,22 +56,26 @@
         <ion-item menu-close ng-click="">
           <h3>Upcoming Plan</h3>
             <h4>Pickup Basketball</h4>
-        <p>Friday, April 8 @ 3:30 PM</p>
+        <p style="float:left">Friday, April 8 @ 3:30 PM</p>
+        <i class="icon ion-close deleteEventTag" style="float:right"></i>
         </ion-item>
         <ion-item menu-close href="">
           <h3>New Comment by Johnny B. Good</h3>
             <h4>Reimert with the Squad</h4>
-        <p>Saturday, April 9 @ 9:30 PM</p>
+        <p style="float:left">Saturday, April 9 @ 9:30 PM</p>
+		<i class="icon ion-close deleteEventTag" style="float:right"></i>
         </ion-item>
         <ion-item menu-close href="">
           <h3>Plan Accepted by Alissa Jupiter</h3>
             <h4>Design Class with AMC!</h4>
-        <p>Monday, April 11 @ 6:00 PM</p>
+        <p style="float:left">Monday, April 11 @ 6:00 PM</p>
+		<i class="icon ion-close deleteEventTag" style="float:right"></i>
         </ion-item>
         <ion-item menu-close href="">
           <h3>Chuck Bryant Passed on your Plan</h3>
             <h4>Pregame Throw-Down before Reimert</h4>
-        <p>Saturday, April 9 @ 6:00 PM</p>
+        <p style="float:left">Saturday, April 9 @ 6:00 PM</p>
+		<i class="icon ion-close deleteEventTag" style="float:right"></i>
         </ion-item>
       </ion-list>
     </ion-content>
