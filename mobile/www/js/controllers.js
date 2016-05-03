@@ -137,6 +137,7 @@ $scope.login = function() {
 			$scope.eventslol = [response[count]];
 			toGo = response[count].id;
 			myImg="http://localhost:3000/"+response[count].image;
+		
 			//currentEvent.href = "/#/app/EventCardPage?eventId=" + response[count].id;
 		});
 	 }
