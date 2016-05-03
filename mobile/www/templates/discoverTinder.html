@@ -7,23 +7,23 @@
         <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}} discoverCardBackground">
           
 		  <div class="discoverCardTitle">
-		  	BBQ & Brews - 14th Annual Picnic
+		  	{{card.title}}
 		  </div>
 
-		  <div class="image" ng-controller="CardCtrl">
+		 <div class="image" ng-controller="CardCtrl">
 			<div class="no-text">NOPE</div>
-			<img ng-src="{{card.image}}">
+			 <a href="{{card.toGo}}"><img ng-src="http://localhost:3000{{card.image}}"></a>
 			<div class="yes-text">LIKE</div>
 		  </div>
 		  
 		  <div class="discoverCardData"> 
 		  	<span class="discoverCardLabel">When:</span>
-		  	<span class="discoverCardEventData">Saturday, May 21 @ 6 PM</span>
+		  	<span class="discoverCardEventData">{{card.time}}, {{card.date}}</span>
 		  </div>
 		  
 		  <div class="discoverCardData"> 
 		  	<span class="discoverCardLabel">Where:</span>
-		  	<span class="discoverCardEventData">Grist Mill, Hellertown, Pennsylvania 18055</span>
+		  	<span class="discoverCardEventData">{{card.location}}</span>
 		  </div>
 		  
 		  <div class="item tabs tabs-secondary tabs-icon-left">

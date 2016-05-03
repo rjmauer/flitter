@@ -69,11 +69,13 @@ $scope.login = function() {
 .controller('CreateCtrl', function($scope, $http, $ionicPopup) {
   // create a blank object to handle form data.
 	$scope.party = {};
+	 var y = document.getElementById("eventForm");
+	 
     $scope.submitForm = function(){
 			console.log($scope.party.time);
 
 		$scope.events = {
-			"event": {"image": $scope.party.img, "title": $scope.party.title, "date": $scope.party.date, "time":$scope.party.time, "location": $scope.party.loc, "description": $scope.party.description}
+			"event": {"image": $scope.party.img, "title": $scope.party.title, "date": $scope.party.date, "time":$scope.party.time, "location": $scope.party.loc, "description": $scope.party.description }
 		};
 
 		$http({
@@ -85,7 +87,6 @@ $scope.login = function() {
         title: 'Your event has been created.',
       });
 	y.reset();
-	z.innerHTML="Location";
     };
 	
 	
@@ -111,6 +112,7 @@ $scope.login = function() {
 	var count = 0;
 	var	toGo;
 	var myImg = "";
+	
 	 Events.query().$promise.then(function(response){
 		console.log(response.length);
 		if(response.length>1){
@@ -183,14 +185,22 @@ $scope.login = function() {
   }
 })
 
-.controller('CardsCtrl', function($scope, TDCardDelegate) {
-  console.log('CARDS CTRL');
-  var cardTypes = [
+.controller('CardsCtrl', function($scope, TDCardDelegate, Events) {
+	var cardTypes = [];
+	
+	Events.query().$promise.then(function(response){
+		for(var i = 0; i<response.length; i++){
+			cardTypes[i]= response[i];
+			cardTypes[i].toGo = "/#/app/EventCardPage?eventId="+(i+1);
+			
+		}
+	  //cardTypes = [{image:response[0].image}, {image:response[1].image}];
+  /*var cardTypes = [
     { image: '/img/bbq.jpg' },
     { image: '/img/bbq.jpg' },
     { image: '/img/bbq.jpg' },
     { image: '/img/bbq.jpg'}
-  ];
+  ];*/
 
   $scope.cards = Array.prototype.slice.call(cardTypes, 0);
 
@@ -203,17 +213,19 @@ $scope.login = function() {
     newCard.id = Math.random();
     $scope.cards.push(angular.extend({}, newCard));
   }
+  });
 })
 
   .controller('CardCtrl', function($scope, TDCardDelegate) {
   $scope.cardSwipedLeft = function(index) {
-    console.log('LEFT SWIPE');
+    //console.log('LEFT SWIPE');
     $scope.addCard();
   };
   $scope.cardSwipedRight = function(index) {
-    console.log('RIGHT SWIPE');
+    //console.log('RIGHT SWIPE');
     $scope.addCard();
   };
+  
 })
 
 .controller('ProfileController', function($scope, $ionicPopover) {
