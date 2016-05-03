@@ -53,6 +53,13 @@ height:inherit;
 border: 1px solid #979797;
 }
 
+.discoverCardImage{
+max-height:250px;
+margin-left:auto;
+margin-right:auto;
+display:block;
+}
+
 .discoverCardTitle{
 font-family: 'Slabo 13px', serif;
 font-size: 18px;
@@ -76,7 +83,7 @@ margin:8px;
 
 .discoverBottomControls{
 position:fixed;
-bottom:48px;
+bottom:24px;
 width:100%;
 }
 
@@ -128,7 +135,7 @@ td-cards {
 td-card {
   position: absolute;
   left: 50%;
-  margin-top: 48px;
+  margin-top: 32px;
   margin-bottom: 40px;
   margin-left: -150px;
   width: 300px;
