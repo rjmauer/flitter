@@ -121,6 +121,15 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
 		}
 	}
 })
+.state('app.yourPlansNew', {
+	url: '/yourPlansNew',
+	views: {
+		'menuContent': {
+			templateUrl: 'templates/yourPlans2.html',
+			controller: 'EventCtrl'
+		}
+	}
+})
 .state('app.addFriend', {
   url: '/addFriend',
   views: {

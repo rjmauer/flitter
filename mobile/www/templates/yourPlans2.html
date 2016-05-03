@@ -1,0 +1,33 @@
+<ion-view view-title="Your Plans">
+  <ion-content scroll="true">
+
+		<h2 class="yourPlansDayHeader">Today</h2>
+		
+		<div class="eventListCard" ng-repeat="Events in eventslol">
+			  <a href="" id ="currentEvent" style="text-decoration: none;color:#000000">
+				  <div class="eventListCardUpper" ng-click="goTo()">
+			  
+					  <div class="discoverCardTitle">
+						{{Events.title}}
+					  </div>
+		  
+					  <div class="discoverCardData"> 
+						<span class="discoverCardLabel">When:</span>
+						<span class="discoverCardEventData">{{Events.date}} {{Events.time}}</span>
+					  </div>
+		  
+					  <div class="discoverCardData"> 
+						<span class="discoverCardLabel">Where:</span>
+						<span class="discoverCardEventData">{{Events.location}}</span>
+					  </div>
+				  </div>
+			  
+				  <div class="eventListCardLower">
+			  
+				  </div>
+			  </a>
+		</div>
+
+
+  </ion-content>
+</ion-view>
