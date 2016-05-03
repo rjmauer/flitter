@@ -69,14 +69,11 @@ $scope.login = function() {
 .controller('CreateCtrl', function($scope, $http, $ionicPopup) {
   // create a blank object to handle form data.
 	$scope.party = {};
-	 var y = document.getElementById("eventForm");
-	 var z = document.getElementById("loc");
-	 
     $scope.submitForm = function(){
 			console.log($scope.party.time);
 
 		$scope.events = {
-			"event": {"title": $scope.party.title, "date": $scope.party.date, "time":$scope.party.time, "location": $scope.party.loc, "description": $scope.party.description, "image": $scope.party.img}
+			"event": {"image": $scope.party.img, "title": $scope.party.title, "date": $scope.party.date, "time":$scope.party.time, "location": $scope.party.loc, "description": $scope.party.description}
 		};
 
 		$http({
@@ -91,18 +88,20 @@ $scope.login = function() {
 	z.innerHTML="Location";
     };
 	
-	var x = document.getElementById("loc");
+	
 	$scope.getLocation = function() {
 		
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(showPosition);
 		} else {
-			x.innerHTML = "Geolocation is not supported by this browser.";
+			
+			window.alert( "Geolocation is not supported by this browser.");
 		}
 		
 	}
 	showPosition = function(position) {
-		x.innerHTML = "(" + position.coords.latitude + 
+		var x = document.getElementById("loc");
+		x.value = "(" + position.coords.latitude + 
     "," + position.coords.longitude+")";  
 	}
 })
@@ -143,11 +142,6 @@ $scope.login = function() {
 	$scope.goTo  = function () {
 		document.getElementById("currentEvent").href = "/#/app/EventCardPage?eventId="+toGo;
 	};
-	$scope.getPic = function() {
-		 var x = document.getElementById("eventImg");
-//x.src = myImg;
-		 console.log(x.src);
-    };
 
 	
 	//CARD CONTROLLERS//
