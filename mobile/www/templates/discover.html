@@ -7,15 +7,16 @@
       <div class="discoverCard item">
         <h2>Books, Brews and BBQ spring fundraiser</h2>
         <p>	Saturday, May 21 @ 6 PM</p>-->
+		<body>
 	<div class="pageContent">
 		<div class="list card current-song discoverCard discoverCardBackground" ng-repeat="Events in eventslol">
 
 		  <div class="item">
-			<div class="eventPageTitle">{{Events.title}}{{Events.image}}</div>
+			<div class="eventPageTitle">{{Events.title}}</div>
 			<p>	{{Events.date}} {{Events.time}}</p>
 		  </div>
 	<!--href = '/#/app/EventCardPage?eventId='{{Events.id}}''-->
-		<a  href = ""id = "currentEvent"><img ng-click="goTo()" ng-src="/img/bbq.jpg" class="eventImage"></a>
+		<a  href = ""id = "currentEvent"><img ng-click="goTo()" src = "http://localhost:3000{{Events.image}}" class="eventImage" id ="eventImg"></a>
 		
 		  <div class="item tabs tabs-secondary tabs-icon-left">
 			<a class="tab-item" style="background-color:#fff3e0">
@@ -41,6 +42,6 @@
 		  
 		</div>
 	</div>
-
+</body>
   </ion-content>
 </ion-view>

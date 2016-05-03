@@ -73,9 +73,9 @@ $scope.login = function() {
 	 
   // calling our submit function.
     $scope.submitForm = function() {
-			console.log($scope.party.time);
+			
 		$scope.events = {
-			"event": {"title": $scope.party.title, "date": $scope.party.date, "time":$scope.party.time, "description": $scope.party.description}
+			"event": {"title": $scope.party.title, "date": $scope.party.date, "time":$scope.party.time, "location": $scope.party.loc, "description": $scope.party.description, "image": $scope.party.img}
 		};
 
 		$http({
@@ -109,16 +109,18 @@ $scope.login = function() {
 .controller('EventCtrl', function($scope,$location, Events) {
 	var count = 0;
 	var	toGo;
-	
+	var myImg = "";
 	 Events.query().$promise.then(function(response){
-		
+		console.log(response.length);
 		if(response.length>1){
-			//var random = Math.floor(Math.random() * response.length-1);
+			//count = Math.floor(Math.random() * response.length-1);
 			$scope.eventslol = [response[0]];
-			toGo = response[0].id;
+			toGo = $scope.eventslol[0].id;
+			myImg="http://localhost:3000/"+response[0].image;
 		}else{
 			$scope.eventslol = [response[0]];
 			toGo = response[0].id;
+			myImg="http://localhost:3000/"+response[0].image;
 			//currentEvent.href =  "/#/app/EventCardPage?eventId=";
 		 }
 	  });
@@ -131,12 +133,18 @@ $scope.login = function() {
 			}
 			$scope.eventslol = [response[count]];
 			toGo = response[count].id;
+			myImg="http://localhost:3000/"+response[count].image;
 			//currentEvent.href = "/#/app/EventCardPage?eventId=" + response[count].id;
 		});
 	 }
 	$scope.goTo  = function () {
 		document.getElementById("currentEvent").href = "/#/app/EventCardPage?eventId="+toGo;
 	};
+	$scope.getPic = function() {
+		 var x = document.getElementById("eventImg");
+//x.src = myImg;
+		 console.log(x.src);
+    };
 })
 .controller('EventCardCtrl',function($scope,$location, Events) {
 	var page = window.location.href;
@@ -146,15 +154,22 @@ $scope.login = function() {
 			id  = page.substring(i+1);
 		}
 	}
-	console.log(id);
-	 Events.query().$promise.then(function(response){
+	var myImg = "";
+	Events.query().$promise.then(function(response){
 		 
 		$scope.eventslol = [response[id-1]];
-	  });
-	 
-	/*$scope.go  = function ( path ) {
-	  $location.path( path );
-	};*/
+		//window.alert($scope.eventslol[0].image);
+		myImg = "http://localhost:3000/" +response[id-1].image;
+		
+	});
+	$scope.getPic = function() {
+		console.log("here");
+		 var x = document.getElementById("eventImg");
+		 x.src = myImg;
+		 console.log(x.src);
+    };
+
+ 
 })
 .controller('MyController', function($scope, $ionicPopover) {
 

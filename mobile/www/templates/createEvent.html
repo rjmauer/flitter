@@ -1,6 +1,6 @@
 <ion-view view-title="Event Creation">
   <ion-content class="padding">
-   <form ng-submit = "submitForm()" class="createEventForm" id = "eventForm">
+   <form ng-submit = "submitForm()"  class="createEventForm" id = "eventForm">
       <div class="list"> 
       	
       	<label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Title</span> <input type="text" placeholder="Title" ng-model="party.title"> </label> 
@@ -9,10 +9,11 @@
 
         <label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Time</span> <input type="time" placeholder="Time" ng-model="party.time"> </label>
 
-        <label class="createEventFormField item item-input item-floating-label"id = "loc"> <span class="input-label">Location</span> <input type="text" placeholder="Location" ></input></label>
+        <label class="createEventFormField item item-input item-floating-label"id = "loc"ng-model="party.loc"> <span class="input-label">Location</span> <input type="text" placeholder="Location" ></input></label>
 		<button type = "button"ng-click="getLocation()">My Location</button>
 
         <label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Description</span> <input type="text" placeholder="Description" ng-model="party.description"> </label>
+		<label class="createEventFormField item item-input item-floating-label"> <span class="input-label">Image</span> <input type="file" placeholder="Description" ng-model="party.img"> </label>
       </div> 
    <div class="createEventSubmit">
      <button class="button button-block button-calm"  <input type = "submit" name = "Submit"> Submit </button>
