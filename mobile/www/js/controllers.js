@@ -206,6 +206,7 @@ $scope.login = function() {
 
   $scope.cardDestroyed = function(index) {
     $scope.cards.splice(index, 1);
+    
   };
 
   $scope.addCard = function() {
@@ -214,6 +215,28 @@ $scope.login = function() {
     $scope.cards.push(angular.extend({}, newCard));
   }
   });
+
+//Code Example that could limit the number of cards that are loaded at start
+//    from https://devdactic.com/optimize-tinder-cards/
+
+// $scope.cards = [];
+//  
+// $scope.addCard = function(img, name) {
+// 	var newCard = {image: img, title: name};
+// 	newCard.id = Math.random();
+// 	$scope.cards.unshift(angular.extend({}, newCard));
+// };
+//  
+// $scope.addCards = function(count) {
+//   $http.get('http://api.randomuser.me/?results=' + count).then(function(value) {
+// 	angular.forEach(value.data.results, function (v) {
+// 	  $scope.addCard(v.user.picture.medium, v.user.email);
+// 	});
+//   });
+// };
+//  
+// $scope.addCards(2);
+
 })
 
   .controller('CardCtrl', function($scope, TDCardDelegate) {

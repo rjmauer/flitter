@@ -54,7 +54,8 @@ border: 1px solid #979797;
 }
 
 .discoverCardImage{
-max-height:250px;
+height:250px;
+object-fit: cover;
 margin-left:auto;
 margin-right:auto;
 display:block;
@@ -325,9 +326,19 @@ border-radius: 6px;
 }
 
 .eventListCardUpper{
+background-color:#FFFFFF;
 }
 
 .eventListCardLower{
+background-color:#00AFC7;
+border-radius: 0px 0px 5px 5px;
+}
+
+.eventListCardLowerData{
+color : #FFFFFF!important;
+text-decoration:none;
+font-size: 15px;
+margin:8px;
 }
 
 .createEventForm {

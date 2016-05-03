@@ -1,32 +1,49 @@
 <ion-view view-title="Your Plans">
-  <ion-content scroll="true">
+  <ion-content scroll="true" ng-controller="CardsCtrl">
 
 		<h2 class="yourPlansDayHeader">Today</h2>
 		
-		<div class="eventListCard" ng-repeat="Events in eventslol">
-			  <a href="" id ="currentEvent" style="text-decoration: none;color:#000000">
-				  <div class="eventListCardUpper" ng-click="goTo()">
+		<ul>
+        	<li ng-repeat="card in cards">
+		
+			<div class="eventListCard">
+				  <a href="" id ="currentEvent" style="text-decoration: none;color:#000000">
+					  <div class="eventListCardUpper" ng-click="goTo()">
 			  
-					  <div class="discoverCardTitle">
-						{{Events.title}}
-					  </div>
+						  <div class="discoverCardTitle">
+							{{card.title}}
+						  </div>
 		  
-					  <div class="discoverCardData"> 
-						<span class="discoverCardLabel">When:</span>
-						<span class="discoverCardEventData">{{Events.date}} {{Events.time}}</span>
-					  </div>
+						  <div class="discoverCardData"> 
+							<span class="discoverCardLabel">When:</span>
+							<span class="discoverCardEventData">{{card.date}} {{card.time}}</span>
+						  </div>
 		  
-					  <div class="discoverCardData"> 
-						<span class="discoverCardLabel">Where:</span>
-						<span class="discoverCardEventData">{{Events.location}}</span>
+						  <div class="discoverCardData"> 
+							<span class="discoverCardLabel">Where:</span>
+							<span class="discoverCardEventData">{{card.location}}</span>
+						  </div>
 					  </div>
-				  </div>
 			  
-				  <div class="eventListCardLower">
+					  <div class="eventListCardLower">
 			  
-				  </div>
-			  </a>
-		</div>
+						  <div class="eventListCardLowerDataComing">
+							<a class="eventListCardLowerData">
+							  <i class="icon ion-ios-color-filter-outline"></i>
+							  77 Coming
+							</a>
+							<a class="eventListCardLowerData">
+							  <i class="icon ion-ios-contact-outline" ></i>
+							  5 Friends
+							</a>
+						  </div>
+			  
+					  </div>
+				  </a>
+			</div>
+			
+			</li>
+		</ul>
 
 
   </ion-content>
