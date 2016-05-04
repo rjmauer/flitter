@@ -7,8 +7,8 @@
         	<li ng-repeat="card in cards">
 		
 			<div class="eventListCard">
-				  <a href="" id ="currentEvent" style="text-decoration: none;color:#000000">
-					  <div class="eventListCardUpper" ng-click="goTo()">
+				  <a href="/#/app/EventCardPage?eventId={{card.id}}" id ="currentEvent" style="text-decoration: none;color:#000000">
+					  <div class="eventListCardUpper" >
 			  
 						  <div class="discoverCardTitle">
 							{{card.title}}

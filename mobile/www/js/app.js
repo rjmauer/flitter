@@ -99,7 +99,8 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
   url: '/yourPlans',
   views: {
 	'menuContent': {
-	  templateUrl: 'templates/yourPlans.html'
+	  templateUrl: 'templates/yourPlans2.html',
+	  controller: 'EventCtrl'
 	}
   }
 })
@@ -118,15 +119,6 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
 		'menuContent': {
 			templateUrl: 'templates/discoverTinder.html',
 			controller: 'CardsCtrl'
-		}
-	}
-})
-.state('app.yourPlansNew', {
-	url: '/yourPlansNew',
-	views: {
-		'menuContent': {
-			templateUrl: 'templates/yourPlans2.html',
-			controller: 'EventCtrl'
 		}
 	}
 })

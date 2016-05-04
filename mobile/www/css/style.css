@@ -332,13 +332,16 @@ background-color:#FFFFFF;
 .eventListCardLower{
 background-color:#00AFC7;
 border-radius: 0px 0px 5px 5px;
+height:32px;
 }
 
 .eventListCardLowerData{
 color : #FFFFFF!important;
 text-decoration:none;
-font-size: 15px;
+font-size: 16px;
 margin:8px;
+display:inline-block;
+margin-top:4px;
 }
 
 .createEventForm {

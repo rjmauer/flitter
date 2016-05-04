@@ -26,15 +26,19 @@
 		  	<span class="discoverCardEventData">{{card.location}}</span>
 		  </div>
 		  
-		  <div class="item tabs tabs-secondary tabs-icon-left">
-			<a class="tab-item" style="background-color:#fff3e0">
-			  <i class="icon ion-ios-color-filter-outline" ></i>
-			  77 Coming
-			</a>
-			<a class="tab-item" style="background-color:#fff3e0">
-			  <i class="icon ion-ios-contact-outline" ></i>
-			  5 Friends
-			</a>
+		  <div class="eventListCardLower">
+			  
+			  <div class="eventListCardLowerDataComing">
+				<a class="eventListCardLowerData">
+				  <i class="icon ion-ios-color-filter-outline"></i>
+				  77 Coming
+				</a>
+				<a class="eventListCardLowerData">
+				  <i class="icon ion-ios-contact-outline" ></i>
+				  5 Friends
+				</a>
+			  </div>
+  
 		  </div>
 		
         </td-card>
@@ -44,9 +48,9 @@
     <div class="discoverBottomControls">
     	<img src="/img/combinedShape.png" class="discoverBottomBackground">
     	<div class="discoverBottomButtons">
-			<img src="/img/flitterButton.png" class="discoverBottomFlitter" ng-click="cardSwipedRight($index)">
-			<img src="/img/passButton.png" class="discoverBottomPass" ng-click="cardSwipedLeft($index)">
-			<img src="/img/favoriteButton.png" class="discoverBottomFavorite" ng-click="cardSwipedRight($index)">
+			<img src="/img/flitterButton.png" class="discoverBottomFlitter" ng-click="newEvent()">
+			<img src="/img/passButton.png" class="discoverBottomPass" ng-click="newEvent()">
+			<img src="/img/favoriteButton.png" class="discoverBottomFavorite" ng-click="newEvent()">
 		</div>
     </div>
       
