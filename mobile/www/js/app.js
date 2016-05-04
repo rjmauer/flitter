@@ -90,7 +90,7 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
       url: '/discover',
       views: {
         'menuContent': {
-          templateUrl: 'templates/discover.html',
+          templateUrl: 'templates/discoverTinder.html',
 		  controller:'EventCtrl'
         }
       }
@@ -112,15 +112,6 @@ angular.module('starter', ['ionic',  'starter.controllers', 'starter.services', 
 	  controller: 'EventCtrl'
 	}
   }
-})
-.state('app.discoverTinder', {
-	url: '/discoverTinder',
-	views: {
-		'menuContent': {
-			templateUrl: 'templates/discoverTinder.html',
-			controller: 'EventCtrl'
-		}
-	}
 })
 .state('app.addFriend', {
   url: '/addFriend',
